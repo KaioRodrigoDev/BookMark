@@ -1,0 +1,35 @@
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    'nativewind/babel',
+    'react-native-reanimated/plugin',
+    [
+      'module-resolver',
+      {
+        alias: {
+          '@Assets': './src/assets',
+          '@Components': './src/components',
+          '@Containers': './src/containers',
+          '@Constants': './src/constants',
+          '@Contexts': './src/contexts',
+          '@HOC': './src/hoc',
+          '@Hooks': './src/hooks',
+          '@Icons': './src/icons',
+          '@Layouts': './src/layouts',
+          '@Mocks': './src/mocks',
+          '@Pages': './src/pages',
+          '@Resources': './src/resources',
+          '@Routes': './src/routes',
+          '@Services': './src/services',
+          '@Store': './src/store',
+          '@Styles': './src/styles',
+          '@Templates': './src/templates',
+          '@Tests': './src/tests',
+          '@Types': './src/types',
+          '@Utils': './src/utils',
+        },
+        extenstions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    ],
+  ],
+};
