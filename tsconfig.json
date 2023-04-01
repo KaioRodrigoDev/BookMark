@@ -5,6 +5,7 @@
     "paths": {
       "@Assets/*": ["./src/assets/*"],
       "@Components/*": ["./src/components/*"],
+      "@Containers/*": ["./src/containers/*"],
       "@Contexts/*": ["./src/contexts/*"],
       "@Hooks/*": ["./src/hooks/*"],
       "@Icons/*": ["./src/icons/*"],
