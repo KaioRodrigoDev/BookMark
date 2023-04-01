@@ -4,8 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import MainCard from '@Components/Cards/MainCard';
 import {BookProps} from '@Types/home/books';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ModalCreate from './components/modal';
-import NewBookModal from './components/BookModal';
+import ModalCreate from './components/ErrorModal';
+import NewBookModal from './components/ChaptersModal';
 import {RouteProp} from '@react-navigation/native';
 
 type ChaptersRouteParams = {

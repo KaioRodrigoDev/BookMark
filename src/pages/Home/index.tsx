@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import MainCard from '@Components/Cards/MainCard';
 import {BookProps} from '@Types/home/books';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ModalCreate from './components/modal';
+import ModalCreate from './components/ErrorModal';
 import NewBookModal from './components/BookModal';
 import {useNavigation} from '@react-navigation/native';
 
