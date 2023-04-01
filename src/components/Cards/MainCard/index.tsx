@@ -1,10 +1,13 @@
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {CardProps} from './interface';
 
-const MainCard = ({title, children}: CardProps) => {
+const MainCard = ({title, children, handleDelete, handlePress}: CardProps) => {
   return (
-    <View className="w-full h-24 bg-[#D7D7D7] rounded-md flex-row overflow-hidden">
+    <TouchableOpacity
+      onPress={() => handlePress(title)}
+      onLongPress={() => handleDelete(title)}
+      className="w-full h-24 bg-[#D7D7D7] rounded-md flex-row overflow-hidden">
       <View className="w-24 m-1 bg-black" />
       <View className="justify-center w-3/4 pl-2">
         <Text
@@ -20,7 +23,7 @@ const MainCard = ({title, children}: CardProps) => {
           </Text>
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
