@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ModalCreate from './components/ErrorModal';
 import NewBookModal from './components/ChaptersModal';
 import {RouteProp} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import ChapterCard from '@Components/Cards/ChapterCard';
 
 type ChaptersRouteParams = {
   params: string;
@@ -17,7 +19,7 @@ type ChaptersProps = {
 };
 const Chapters: React.FC<ChaptersProps> = ({route}) => {
   const [books, setBooks] = useState<[] | BookProps[]>([]);
-
+  const {navigate} = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const [warningModal, setWarningModal] = useState(false);
 
@@ -80,6 +82,14 @@ const Chapters: React.FC<ChaptersProps> = ({route}) => {
     [setBooks, books],
   );
 
+  const handlePress = useCallback(
+    (item: string) => {
+      //@ts-ignore
+      navigate('ChapterDescription', {chapter: item, book: route.params});
+    },
+    [navigate, route],
+  );
+
   return (
     <>
       <View>
@@ -89,9 +99,13 @@ const Chapters: React.FC<ChaptersProps> = ({route}) => {
               ItemSeparatorComponent={() => <View className="pb-4" />}
               data={books}
               renderItem={({item}) => (
-                <MainCard title={item.title} handleDelete={handleDelete}>
+                <ChapterCard
+                  title={item.title}
+                  item={item}
+                  handleDelete={handleDelete}
+                  handlePress={handlePress}>
                   {item.description}
-                </MainCard>
+                </ChapterCard>
               )}
             />
           )}

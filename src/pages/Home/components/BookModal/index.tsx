@@ -19,25 +19,31 @@ const NewBookModal: React.FC<NewBookModalProps> = ({
 
   return (
     <ModalBook visible={visible} onClose={onClose}>
-      <View className="items-center justify-center pt-4 pb-4 rounded-lg bg-slate-600">
-        <Icon name="book" size={35} color="#ddd" />
+      <View className="p-6 pt-4 pb-4 rounded-lg bg-slate-600">
+        <View className="self-center">
+          <Icon name="book" size={35} color="#ddd" />
+        </View>
         <Text className="mt-4 font-bold text-white">
           Digite o nome do livro!
         </Text>
         <TextInput
           placeholder="Nome do Livro"
           onChangeText={text => setTitle(text)}
-          className="justify-center items-center content-center h-10 text-center w-[80%] bg-slate-50 rounded-md "
+          className="items-center content-center justify-center h-10 text-black rounded-md bg-slate-50"
         />
-        <Text className="mt-4 font-bold text-white">Descrição do Livro</Text>
+        <Text className="mt-4 font-bold text-white">Descrição do livro</Text>
         <TextInput
-          placeholder="Descrição"
+          placeholder="Descrição do livro"
           onChangeText={text => setDescription(text)}
-          className="justify-center items-center content-center h-10 text-center w-[80%] bg-slate-50 rounded-md "
+          multiline={true}
+          numberOfLines={2}
+          // eslint-disable-next-line react-native/no-inline-styles
+          style={{textAlignVertical: 'top'}}
+          className="text-black rounded-md bg-slate-50"
         />
         <TouchableOpacity
           onPress={handleCreate}
-          className="items-center justify-center mt-4 rounded-md h-7 w-28 bg-slate-200">
+          className="items-center self-center justify-center mt-4 text-black rounded-md h-7 w-28 bg-slate-200">
           <Text className="font-semibold">Criar Livro</Text>
         </TouchableOpacity>
       </View>

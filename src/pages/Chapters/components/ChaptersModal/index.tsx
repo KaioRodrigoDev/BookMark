@@ -25,24 +25,24 @@ const NewChapterModal: React.FC<NewChapterModalProps> = ({
         </View>
         <Text className="mt-4 font-bold text-white">Digite um Titulo!</Text>
         <TextInput
-          placeholder="Nome do Livro"
+          placeholder="Digite um titulo ou Capitulo"
           onChangeText={text => setTitle(text)}
-          className="items-center content-center justify-center h-10 rounded-md bg-slate-50 "
+          className="items-center content-center justify-center h-10 text-black rounded-md bg-slate-50"
         />
         <Text className="mt-4 font-bold text-white">Anotação:</Text>
         <TextInput
-          placeholder="Descrição"
+          placeholder="Anotação"
           onChangeText={text => setDescription(text)}
           multiline={true}
           numberOfLines={5}
           // eslint-disable-next-line react-native/no-inline-styles
           style={{textAlignVertical: 'top'}}
-          className="rounded-md bg-slate-50"
+          className="text-black rounded-md bg-slate-50"
         />
         <TouchableOpacity
           onPress={handleCreate}
           className="items-center self-center justify-center mt-4 rounded-md h-7 w-28 bg-slate-200">
-          <Text className="font-semibold">Criar Livro</Text>
+          <Text className="font-semibold">Criar Anotação</Text>
         </TouchableOpacity>
       </View>
     </ModalBook>
