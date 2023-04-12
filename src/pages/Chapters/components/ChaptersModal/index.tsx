@@ -10,11 +10,12 @@ const NewChapterModal: React.FC<NewChapterModalProps> = ({
   onSend,
 }) => {
   const [title, setTitle] = useState('');
+  const [page, setPage] = useState('');
 
   const [description, setDescription] = useState('');
 
   async function handleCreate() {
-    await onSend(title, description);
+    await onSend(title, description, page);
   }
 
   return (
@@ -27,6 +28,12 @@ const NewChapterModal: React.FC<NewChapterModalProps> = ({
         <TextInput
           placeholder="Digite um titulo ou Capitulo"
           onChangeText={text => setTitle(text)}
+          className="items-center content-center justify-center h-10 text-black rounded-md bg-slate-50"
+        />
+        <Text className="mt-4 font-bold text-white">Digite a pagina</Text>
+        <TextInput
+          placeholder="Digite a pagina"
+          onChangeText={text => setPage(text)}
           className="items-center content-center justify-center h-10 text-black rounded-md bg-slate-50"
         />
         <Text className="mt-4 font-bold text-white">Anotação:</Text>

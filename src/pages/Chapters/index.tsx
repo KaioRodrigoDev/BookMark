@@ -40,7 +40,7 @@ const Chapters: React.FC<ChaptersProps> = ({route}) => {
   }, [books, route]);
 
   const handleAdd = useCallback(
-    (title: string, description: string) => {
+    (title: string, description: string, page: string) => {
       function hasBook(titleBook: string) {
         console.log(books.some(element => element.title === titleBook));
         return books.some(element => element.title === titleBook);
@@ -48,6 +48,7 @@ const Chapters: React.FC<ChaptersProps> = ({route}) => {
       try {
         const data = {
           title: title,
+          page: page,
           description: description,
         };
         if (books.length === 0) {
